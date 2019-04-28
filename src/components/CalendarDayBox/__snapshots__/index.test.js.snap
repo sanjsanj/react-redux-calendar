@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CalendarDayBox when passed a day prop should match snapshot 1`] = `
+<styled.div
+  disabled={false}
+>
+  28
+</styled.div>
+`;
+
+exports[`CalendarDayBox when passed no day prop should match snapshot 1`] = `
+<styled.div
+  disabled={true}
+/>
+`;

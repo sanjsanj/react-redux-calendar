@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "appBackgroundColor": "linear-gradient(to bottom,#292a49 0%,#2b548f 100%)",
+      "appColor": "#fff",
+      "boxShadowActive": "0px 3px 9px #000000",
+      "boxShadowPassive": "0px 2px 9px #0000007a",
+      "buttonBackground": "teal",
+      "buttonColor": "#fff",
+      "dayBackgroundLinearGradient": "linear-gradient(to bottom,#499bea 0%,#338ae7 100%)",
+      "dayColor": "#000",
+      "disabledDayBackgroundColor": "#0c4b8f",
+      "mainTextColor": "#a7d1e2",
+      "mainTitleColor": "#e0321f",
+    }
+  }
+>
+  <GlobalStyleComponent />
+  <styled.h1>
+    <img
+      alt="Logo"
+      src="favicon.ico"
+    />
+    Calendar Component
+  </styled.h1>
+  <styled.button>
+    Add reminder
+     
+    <span
+      aria-label="Reminder icon"
+      role="img"
+    >
+      ⏰
+    </span>
+  </styled.button>
+  <ConnectFunction />
+</ThemeProvider>
+`;

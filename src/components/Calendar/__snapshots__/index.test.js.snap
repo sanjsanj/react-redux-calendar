@@ -1,0 +1,333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar should match snapshot 1`] = `
+<Fragment>
+  <h2>
+    April
+     
+    2019
+  </h2>
+  <styled.div>
+    <styled.p
+      key="0"
+    >
+      Sun
+    </styled.p>
+    <styled.p
+      key="1"
+    >
+      Mon
+    </styled.p>
+    <styled.p
+      key="2"
+    >
+      Tue
+    </styled.p>
+    <styled.p
+      key="3"
+    >
+      Wed
+    </styled.p>
+    <styled.p
+      key="4"
+    >
+      Thu
+    </styled.p>
+    <styled.p
+      key="5"
+    >
+      Fri
+    </styled.p>
+    <styled.p
+      key="6"
+    >
+      Sat
+    </styled.p>
+    <CalendarDayBox
+      key="0"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 1,
+          "dayOfMonth": 1,
+        }
+      }
+      key="1"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 2,
+          "dayOfMonth": 2,
+        }
+      }
+      key="2"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 3,
+          "dayOfMonth": 3,
+        }
+      }
+      key="3"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 4,
+          "dayOfMonth": 4,
+        }
+      }
+      key="4"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 5,
+          "dayOfMonth": 5,
+        }
+      }
+      key="5"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 6,
+          "dayOfMonth": 6,
+        }
+      }
+      key="6"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 0,
+          "dayOfMonth": 7,
+        }
+      }
+      key="7"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 1,
+          "dayOfMonth": 8,
+        }
+      }
+      key="8"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 2,
+          "dayOfMonth": 9,
+        }
+      }
+      key="9"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 3,
+          "dayOfMonth": 10,
+        }
+      }
+      key="10"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 4,
+          "dayOfMonth": 11,
+        }
+      }
+      key="11"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 5,
+          "dayOfMonth": 12,
+        }
+      }
+      key="12"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 6,
+          "dayOfMonth": 13,
+        }
+      }
+      key="13"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 0,
+          "dayOfMonth": 14,
+        }
+      }
+      key="14"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 1,
+          "dayOfMonth": 15,
+        }
+      }
+      key="15"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 2,
+          "dayOfMonth": 16,
+        }
+      }
+      key="16"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 3,
+          "dayOfMonth": 17,
+        }
+      }
+      key="17"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 4,
+          "dayOfMonth": 18,
+        }
+      }
+      key="18"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 5,
+          "dayOfMonth": 19,
+        }
+      }
+      key="19"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 6,
+          "dayOfMonth": 20,
+        }
+      }
+      key="20"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 0,
+          "dayOfMonth": 21,
+        }
+      }
+      key="21"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 1,
+          "dayOfMonth": 22,
+        }
+      }
+      key="22"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 2,
+          "dayOfMonth": 23,
+        }
+      }
+      key="23"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 3,
+          "dayOfMonth": 24,
+        }
+      }
+      key="24"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 4,
+          "dayOfMonth": 25,
+        }
+      }
+      key="25"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 5,
+          "dayOfMonth": 26,
+        }
+      }
+      key="26"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 6,
+          "dayOfMonth": 27,
+        }
+      }
+      key="27"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 0,
+          "dayOfMonth": 28,
+        }
+      }
+      key="28"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 1,
+          "dayOfMonth": 29,
+        }
+      }
+      key="29"
+    />
+    <CalendarDayBox
+      day={
+        Object {
+          "dayNameIndex": 2,
+          "dayOfMonth": 30,
+        }
+      }
+      key="30"
+    />
+    <CalendarDayBox
+      key="31"
+    />
+    <CalendarDayBox
+      key="32"
+    />
+    <CalendarDayBox
+      key="33"
+    />
+    <CalendarDayBox
+      key="34"
+    />
+  </styled.div>
+</Fragment>
+`;
