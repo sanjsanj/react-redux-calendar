@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 
 import { toggleReminderModal, addReminder } from "../../actions";
 
-import { formSerialize } from "../../helpers";
+import { formSerialize, stringTimeToDateTime } from "../../helpers";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { StyledModalWrapper, StyledForm } from "./styles";
@@ -14,22 +14,25 @@ import { StyledSubmitInput } from "../App/styles";
 export const ReminderModal = props => {
   const [selectedDateTime, setSelectedDateTime] = React.useState(Date.now());
 
-  const _handleModalUnderlayClick = (e, toggleReminderModal) =>
-    e.target.id === "reminder-modal-underlay" ? toggleReminderModal() : null;
+  const _handleModalUnderlayClick = e =>
+    e.target.id === "reminder-modal-underlay"
+      ? props.toggleReminderModal()
+      : null;
 
   const _handleSubmit = e => {
     e.preventDefault();
 
+    const dateTime = stringTimeToDateTime(selectedDateTime);
     const text = formSerialize(e.target)["reminder-text"];
     const color = formSerialize(e.target)["color"];
-    const dateTime = selectedDateTime;
 
     props.addReminder({ text, dateTime, color });
+    props.toggleReminderModal();
   };
 
   return (
     <StyledModalWrapper
-      onClick={e => _handleModalUnderlayClick(e, props.toggleReminderModal)}
+      onClick={_handleModalUnderlayClick}
       id={"reminder-modal-underlay"}
     >
       <StyledForm onSubmit={_handleSubmit}>
@@ -38,8 +41,8 @@ export const ReminderModal = props => {
         <div>
           <span>Date:</span>{" "}
           <DatePicker
-            dateFormat="yyyy MMMM d h:mm aa"
             onChange={t => setSelectedDateTime(t)}
+            dateFormat="yyyy MMMM d h:mm aa"
             selected={selectedDateTime}
             timeIntervals={15}
             timeCaption="time"

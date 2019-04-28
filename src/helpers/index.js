@@ -67,3 +67,5 @@ export const formSerialize = formElement => {
   }
   return values;
 };
+
+export const stringTimeToDateTime = time => new Date(time).getTime();
