@@ -74,10 +74,12 @@ export const withReminders = (daysOfTheMonthArray, month, year, reminders) => {
     const endOfDay = new Date(year, month, day.dayOfMonth + 1).getTime();
 
     return updateObject(day, {
-      reminders: reminders.filter(
-        reminder =>
-          reminder.dateTime >= startOfDay && reminder.dateTime <= endOfDay
-      ),
+      reminders: reminders
+        .filter(
+          reminder =>
+            reminder.dateTime >= startOfDay && reminder.dateTime <= endOfDay
+        )
+        .sort((a, b) => (a.dateTime > b.dateTime ? 1 : -1)),
     });
   });
 };
