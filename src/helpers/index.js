@@ -63,6 +63,8 @@ export const getDaysForMonth = (year, month) => {
   ];
 };
 
+export const ensureTwoDigits = number => `0${number}`.slice(-2);
+
 /** With-data helpers */
 export const withReminders = (daysOfTheMonthArray, month, year, reminders) => {
   return daysOfTheMonthArray.map((day, index) => {

@@ -18,7 +18,9 @@ describe("CalendarDayBox", () => {
   });
 
   describe("when passed a day prop", () => {
-    const wrapper = shallow(<CalendarDayBox day={{ dayOfMonth: 28 }} />);
+    const wrapper = shallow(
+      <CalendarDayBox day={{ dayOfMonth: 28, reminders: [] }} />
+    );
 
     it("should have day of month", () => {
       expect(wrapper.text()).toEqual("28");

@@ -63,31 +63,6 @@ export const ReminderModal = props => {
           />
         </div>
 
-        <div>
-          Colour:
-          <label htmlFor={"red"}>
-            <input type={"radio"} name={"color"} value={"red"} />
-            <span role={"img"} aria-label={"red"}>
-              🔴
-            </span>{" "}
-            Red
-          </label>
-          <label htmlFor={"green"}>
-            <input type={"radio"} name={"color"} value={"green"} />
-            <span role={"img"} aria-label={"green"}>
-              📗
-            </span>{" "}
-            Green
-          </label>
-          <label htmlFor={"yellow"}>
-            <input type={"radio"} name={"color"} value={"yellow"} />
-            <span role={"img"} aria-label={"yellow"}>
-              💛
-            </span>{" "}
-            Yellow
-          </label>
-        </div>
-
         <StyledSubmitInput type="submit" value="Add" />
       </StyledForm>
     </StyledModalWrapper>
