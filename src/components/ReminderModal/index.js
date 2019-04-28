@@ -3,24 +3,36 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 
-import { toggleReminderModal } from "../../actions";
+import { toggleReminderModal, addReminder } from "../../actions";
+
+import { formSerialize } from "../../helpers";
 
 import "react-datepicker/dist/react-datepicker.css";
 import { StyledModalWrapper, StyledForm } from "./styles";
 import { StyledSubmitInput } from "../App/styles";
 
-const _handleModalUnderlayClick = (e, toggleReminderModal) =>
-  e.target.id === "reminder-modal-underlay" ? toggleReminderModal() : null;
-
 export const ReminderModal = props => {
   const [selectedDateTime, setSelectedDateTime] = React.useState(Date.now());
+
+  const _handleModalUnderlayClick = (e, toggleReminderModal) =>
+    e.target.id === "reminder-modal-underlay" ? toggleReminderModal() : null;
+
+  const _handleSubmit = e => {
+    e.preventDefault();
+
+    const text = formSerialize(e.target)["reminder-text"];
+    const color = formSerialize(e.target)["color"];
+    const dateTime = selectedDateTime;
+
+    props.addReminder({ text, dateTime, color });
+  };
 
   return (
     <StyledModalWrapper
       onClick={e => _handleModalUnderlayClick(e, props.toggleReminderModal)}
       id={"reminder-modal-underlay"}
     >
-      <StyledForm onSubmit={e => e.preventDefault()}>
+      <StyledForm onSubmit={_handleSubmit}>
         <h2>Add a reminder</h2>
 
         <div>
@@ -37,7 +49,7 @@ export const ReminderModal = props => {
         </div>
 
         <div>
-          <label htmlFor={"reminder-text"}>Reminder: </label>
+          <label htmlFor={"reminder-text"}>Reminder:</label>
           <input
             name={"reminder-text"}
             id={"reminder-text"}
@@ -48,12 +60,27 @@ export const ReminderModal = props => {
 
         <div>
           Colour:
-          <input type={"radio"} id={"red"} name={"color"} value={"red"} />
-          <label htmlFor={"red"}>🔴 Red</label>
-          <input type={"radio"} id={"green"} name={"color"} value={"green"} />
-          <label htmlFor={"green"}>📗 Green</label>
-          <input type={"radio"} id={"yellow"} name={"color"} value={"yellow"} />
-          <label htmlFor={"yellow"}>💛 Yellow</label>
+          <label htmlFor={"red"}>
+            <input type={"radio"} name={"color"} value={"red"} />
+            <span role={"img"} aria-label={"red"}>
+              🔴
+            </span>{" "}
+            Red
+          </label>
+          <label htmlFor={"green"}>
+            <input type={"radio"} name={"color"} value={"green"} />
+            <span role={"img"} aria-label={"green"}>
+              📗
+            </span>{" "}
+            Green
+          </label>
+          <label htmlFor={"yellow"}>
+            <input type={"radio"} name={"color"} value={"yellow"} />
+            <span role={"img"} aria-label={"yellow"}>
+              💛
+            </span>{" "}
+            Yellow
+          </label>
         </div>
 
         <StyledSubmitInput type="submit" value="Add" />
@@ -68,6 +95,7 @@ ReminderModal.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   toggleReminderModal: () => dispatch(toggleReminderModal()),
+  addReminder: reminder => dispatch(addReminder(reminder)),
 });
 
 export default connect(

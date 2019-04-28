@@ -25,4 +25,8 @@ export const StyledForm = styled.form`
   > * {
     margin: 20px auto;
   }
+
+  label {
+    margin-right: 10px;
+  }
 `;
