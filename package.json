@@ -4,6 +4,7 @@
   "private": false,
   "dependencies": {
     "react": "^16.8.6",
+    "react-datepicker": "^2.5.0",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
     "react-scripts": "3.0.0",

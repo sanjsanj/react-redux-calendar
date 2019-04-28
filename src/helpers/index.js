@@ -47,3 +47,11 @@ export const getDaysForMonth = (year, month) => {
     ..._getTrailingDaysArray(daysArray),
   ];
 };
+
+export const styledComponentSelector = className =>
+  `[data-class="${className}"]`;
+
+export const updateObject = (prevObject, nextObject) => ({
+  ...prevObject,
+  ...nextObject,
+});

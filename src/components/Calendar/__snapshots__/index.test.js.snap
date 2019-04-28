@@ -7,6 +7,31 @@ exports[`Calendar should match snapshot 1`] = `
      
     2019
   </h2>
+  <styled.button
+    data-class="btn-toggle-reminder-modal"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    Add reminder
+     
+    <span
+      aria-label="Reminder icon"
+      role="img"
+    >
+      ⏰
+    </span>
+  </styled.button>
   <styled.div>
     <styled.p
       key="0"

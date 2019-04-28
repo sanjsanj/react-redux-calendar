@@ -15,6 +15,8 @@ exports[`App should match snapshot 1`] = `
       "disabledDayBackgroundColor": "#0c4b8f",
       "mainTextColor": "#a7d1e2",
       "mainTitleColor": "#e0321f",
+      "maxWidth": "700px",
+      "modalUnderlayBackground": "#0000008a",
     }
   }
 >
@@ -26,16 +28,6 @@ exports[`App should match snapshot 1`] = `
     />
     Calendar Component
   </styled.h1>
-  <styled.button>
-    Add reminder
-     
-    <span
-      aria-label="Reminder icon"
-      role="img"
-    >
-      ⏰
-    </span>
-  </styled.button>
   <ConnectFunction />
 </ThemeProvider>
 `;

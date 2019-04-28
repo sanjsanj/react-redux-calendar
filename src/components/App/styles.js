@@ -17,6 +17,10 @@ export const defaultTheme = {
 
   appBackgroundColor: "linear-gradient(to bottom,#292a49 0%,#2b548f 100%)",
   appColor: "#fff",
+
+  modalUnderlayBackground: "#0000008a",
+
+  maxWidth: "700px",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -32,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    max-width: 700px;
+    max-width: ${props => props.theme.maxWidth};
     margin: auto;
   }
 
@@ -59,6 +63,22 @@ export const StyledButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   padding: 10px;
+  border: 0;
+
+  :hover {
+    box-shadow: 0px 2px 9px #0000007e;
+  }
+`;
+
+export const StyledSubmitInput = styled.input`
+  background: ${props => props.theme.buttonBackground};
+  color: ${props => props.theme.buttonColor};
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  width: 150px;
   border: 0;
 
   :hover {

@@ -2,11 +2,13 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJSON from "enzyme-to-json";
 
-import App from ".";
+import { App } from ".";
 
 describe("App", () => {
   it("should match snapshot", () => {
-    const wrapper = shallow(<App />);
+    const props = { showReminderModal: false };
+    const wrapper = shallow(<App {...props} />);
+
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });
