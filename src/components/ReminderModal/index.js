@@ -26,6 +26,8 @@ export const ReminderModal = props => {
     const text = formSerialize(e.target)["reminder-text"];
     const color = formSerialize(e.target)["color"];
 
+    if (!text || !dateTime) return;
+
     props.addReminder({ text, dateTime, color });
     props.toggleReminderModal();
   };

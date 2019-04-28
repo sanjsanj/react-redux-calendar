@@ -24,6 +24,8 @@ describe("CalendarDayBox", () => {
       expect(wrapper.text()).toEqual("28");
     });
 
+    it("should show reminders for that day", () => {});
+
     it("should match snapshot", () => {
       expect(toJSON(wrapper)).toMatchSnapshot();
     });

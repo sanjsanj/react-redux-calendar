@@ -1,3 +1,18 @@
+import { reminders } from "../reducers/reminders";
+
+/** Test helpers */
+export const styledComponentSelector = className =>
+  `[data-class="${className}"]`;
+
+/** Reducer helpers */
+export const updateObject = (prevObject, nextObject) => ({
+  ...prevObject,
+  ...nextObject,
+});
+
+export const updateArray = (prevArray, item) => [...prevArray, item];
+
+/** Time helpers */
 export const dayNamesArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const _monthNamesArray = [
@@ -48,16 +63,24 @@ export const getDaysForMonth = (year, month) => {
   ];
 };
 
-export const styledComponentSelector = className =>
-  `[data-class="${className}"]`;
+/** With-data helpers */
+export const withReminders = (daysOfTheMonthArray, month, year, reminders) => {
+  return daysOfTheMonthArray.map((day, index) => {
+    if (!day) return day;
 
-export const updateObject = (prevObject, nextObject) => ({
-  ...prevObject,
-  ...nextObject,
-});
+    const startOfDay = new Date(year, month, day.dayOfMonth).getTime();
+    const endOfDay = new Date(year, month, day.dayOfMonth + 1).getTime();
 
-export const updateArray = (prevArray, item) => [...prevArray, item];
+    return updateObject(day, {
+      reminders: reminders.filter(
+        reminder =>
+          reminder.dateTime >= startOfDay && reminder.dateTime <= endOfDay
+      ),
+    });
+  });
+};
 
+/** Form helpers */
 export const formSerialize = formElement => {
   const values = {};
   const inputs = formElement.elements;

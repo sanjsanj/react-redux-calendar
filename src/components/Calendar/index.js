@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 
 import { toggleReminderModal } from "../../actions";
 
-import { dayNamesArray, getMonthName, getDaysForMonth } from "../../helpers";
+import {
+  dayNamesArray,
+  getMonthName,
+  getDaysForMonth,
+  withReminders,
+} from "../../helpers";
 
 import CalendarDayBox from "../CalendarDayBox";
 
@@ -52,12 +57,14 @@ Calendar.propTypes = {
   monthName: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({ calendar }) => ({
+const mapStateToProps = ({ calendar, reminders }) => ({
   monthName: getMonthName(calendar.selectedMonth),
   selectedYear: calendar.selectedYear,
-  daysOfTheMonth: getDaysForMonth(
+  daysOfTheMonth: withReminders(
+    getDaysForMonth(calendar.selectedYear, calendar.selectedMonth),
+    calendar.selectedMonth,
     calendar.selectedYear,
-    calendar.selectedMonth
+    reminders
   ),
 });
 
